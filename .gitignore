@@ -1,0 +1,31 @@
+# Moodle data directory (cache, sessions, temp, etc.)
+server/moodledata/
+moodledata/
+
+# Composer dependencies
+/vendor/
+
+# Node dependencies
+node_modules/
+npm-debug.log
+
+# IDE & Editor files
+/.idea
+/.vscode
+*.sublime-project
+*.sublime-workspace
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Cache files
+*.cache

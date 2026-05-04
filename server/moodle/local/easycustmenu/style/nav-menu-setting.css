@@ -1,0 +1,18 @@
+/* ------only apply to page with body class page-easycustmenu ---------- */
+
+.page-easycustmenu .easycustmenu_setting_header h2 {
+    margin-bottom: .5rem;
+}
+
+.page-easycustmenu table.generaltable tr .child-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: .5rem;
+}
+
+.page-easycustmenu table.generaltable tr .child-icon-wrapper .indentation {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-right: .5rem;
+}
