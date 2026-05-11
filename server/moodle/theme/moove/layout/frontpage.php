@@ -101,11 +101,15 @@ $customitems = [
         'text' => 'Biblioteca',
         'url' => 'https://uninavarra.edu.co/estudiantes/biblioteca/',
     ],
-    [
+];
+
+// Only show Kopere Dashboard if user is logged in
+if ($USER->id != 0) {
+    $customitems[] = [
         'text' => 'Kopere Dashboard',
         'url' => 'https://uninavarra.edu-labs.co/local/kopere_dashboard/view.php?classname=dashboard&method=start',
-    ],
-];
+    ];
+}
 
 foreach ($customitems as $item) {
     $key = strtolower(str_replace(' ', '', $item['text']));
