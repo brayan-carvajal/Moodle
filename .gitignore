@@ -29,3 +29,7 @@ Thumbs.db
 
 # Cache files
 *.cache
+
+# Server temporary files
+server/mysql/data/
+server/tmp/

@@ -53561,7 +53561,7 @@ a {
 .dashboard-card .dashboard-card-img {
   padding: 0.5rem;
   position: relative;
-  height: 10rem !important;
+  height: 12rem !important;
   background-position: center;
   background-size: cover;
 }
@@ -53814,7 +53814,7 @@ body.has-secondarynavigation .drawer-toggles .drawer-toggler {
 }
 
 .secondary-navigation .moremenu .nav-tabs .nav-link.active {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #000102;
   font-weight: 700;
 }
 

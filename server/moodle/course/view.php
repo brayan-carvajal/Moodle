@@ -360,6 +360,21 @@ if ($PAGE->user_is_editing()) {
 // Course wrapper start.
 echo html_writer::start_tag('div', $containerattributes);
 
+     if ($PAGE->user_allowed_editing()) {
+         $region = 'content';
+         $params = ['bui_addblock' => '', 'sesskey' => sesskey()];
+         if (!empty($region)) {
+             $params['bui_blockregion'] = $region;
+         }
+         $addblockurl = new moodle_url($PAGE->url, $params);
+         echo $OUTPUT->render_from_template('core/add_block_button', [
+             'link' => $addblockurl->out(false),
+             'escapedlink' => "?{$addblockurl->get_query_string(false)}",
+             'pagehash' => $PAGE->get_edited_page_hash(),
+             'blockregion' => $region,
+         ]);
+     }
+
 // CAUTION, hacky fundamental variable defintion to follow!
 // Note that because of the way course fromats are constructed though
 // inclusion we pass parameters around this way.
