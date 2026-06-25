@@ -51,7 +51,7 @@ if (!empty($CFG->forceloginforprofiles)) {
     if (isguestuser()) {
         $PAGE->set_context(context_system::instance());
         $PAGE->set_title(get_string('loginrequired'));
-        echo $OUTPUT->header();
+echo $OUTPUT->header();
         echo $OUTPUT->confirm(
             get_string('guestcantaccessprofiles', 'error'),
             get_login_url(),
@@ -88,12 +88,12 @@ if (!user_can_view_profile($user, null, $context)) {
 
     // Course managers can be browsed at site level. If not forceloginforprofiles, allow access (bug #4366).
     $struser = get_string('user');
-    $PAGE->set_context(context_system::instance());
-    $PAGE->set_title($struser);  // Do not leak the name.
-    $PAGE->set_heading($struser);
-    $PAGE->set_pagelayout('mypublic');
-    $PAGE->add_body_class('limitedwidth');
-    $PAGE->set_url('/user/profile.php', array('id' => $userid));
+$PAGE->set_context(context_system::instance());
+$PAGE->set_title($struser);  // Do not leak the name.
+$PAGE->set_heading($struser);
+$PAGE->set_pagelayout('mypublic');
+$PAGE->add_body_class('limitedwidth');
+$PAGE->set_url('/user/profile.php', array('id' => $userid));
     $PAGE->navbar->add($struser);
     echo $OUTPUT->header();
     echo $OUTPUT->notification(get_string('usernotavailable', 'error'));
@@ -109,6 +109,7 @@ if (!$currentpage = my_get_page($userid, MY_PAGE_PUBLIC)) {
 $PAGE->set_context($context);
 $PAGE->set_pagelayout('mypublic');
 $PAGE->add_body_class('limitedwidth');
+$PAGE->add_body_class('hideprofilepageheader');
 $PAGE->set_pagetype('user-profile');
 
 // Set up block editing capabilities.
@@ -188,10 +189,10 @@ if ($PAGE->user_allowed_editing()) {
         $params['edit'] = 1;
     } else if (empty($edit)) {
         $editstring = get_string('updatemymoodleon');
-        $resetbutton = $OUTPUT->single_button($reseturl, $resetstring);
+        // $resetbutton = $OUTPUT->single_button($reseturl, $resetstring);
     } else {
         $editstring = get_string('updatemymoodleoff');
-        $resetbutton = $OUTPUT->single_button($reseturl, $resetstring);
+        // $resetbutton = $OUTPUT->single_button($reseturl, $resetstring);
     }
 
     $url = new moodle_url("$CFG->wwwroot/user/profile.php", $params);
@@ -208,9 +209,10 @@ if ($PAGE->user_allowed_editing()) {
 // Trigger a user profile viewed event.
 profile_view($user, $usercontext);
 
+echo '<style>body.hideprofilepageheader header#page-header > div.w-100 {display:none !important;} body.hideprofilepageheader header#page-header {min-height:0; padding:0; margin:0;}</style>';
+
 // TODO WORK OUT WHERE THE NAV BAR IS!
 echo $OUTPUT->header();
-echo '<div class="userprofile">';
 
 $hiddenfields = [];
 if (!has_capability('moodle/user:viewhiddendetails', $usercontext)) {
@@ -229,14 +231,48 @@ if ($user->description && !isset($hiddenfields['description'])) {
     echo '</div>';
 }
 
-echo $OUTPUT->heading(get_string('userprofile', 'core_user'), 2, 'visually-hidden');
-echo $OUTPUT->custom_block_region('content');
-
 // Render custom blocks.
 $renderer = $PAGE->get_renderer('core_user', 'myprofile');
 $tree = core_user\output\myprofile\manager::build_tree($user, $currentuser);
-echo $renderer->render($tree);
 
-echo '</div>';  // Userprofile class.
+echo '<div id="topofscroll" class="main-inner">';
+echo '  <div id="page-content" class="d-print-block">';
+echo '    <div id="region-main-box">';
+echo '      <div class="row">';
+
+// Columna izquierda: foto y nombre del usuario.
+echo '        <div class="col-md-4">';
+echo '          <div class="card card-body card-profile">';
+echo '            <div class="userpicture text-center mb-2">';
+echo '              ' . $OUTPUT->user_picture($user, ['size' => 100, 'class' => 'userpicture']);
+echo '            </div>';
+echo '            <h3 class="text-center fw-bold mb-2">' . fullname($user) . '</h3>';
+echo '            <div class="headerbuttons text-center mb-2"></div>';
+echo '            <a href="' . (new moodle_url('/user/editadvanced.php', ['id' => $user->id, 'course' => !empty($course) ? $course->id : 1, 'returnto' => 'profile']))->out() . '" class="btn btn-sm btn-primary btn-block my-2"><i class="fa fa-edit"></i> Editar perfil</a>';
+echo '            <div class="userinfo my-2"></div>';
+echo '          </div>';
+echo '        </div>';
+
+// Columna derecha: contenido del perfil.
+echo '        <div class="col-md-8">';
+echo '          <section id="region-main" aria-label="Contenido">';
+echo '            <span id="user-notifications"></span>';
+echo '            <div role="main">';
+echo '              <span id="maincontent"></span>';
+echo '              <div class="userprofile">';
+echo '                <h2 class="sr-only">Perfil de usuario</h2>';
+echo '                <section id="block-region-content" class="block-region" data-blockregion="content" data-droptarget="1" aria-labelledby="content-block-region-heading">';
+echo '                  <h2 class="sr-only" id="content-block-region-heading">Bloques de contenido principales</h2>';
+echo '                </section>';
+echo '                ' . $renderer->render($tree);
+echo '              </div>';
+echo '            </div>';
+echo '          </section>';
+echo '        </div>';
+
+echo '      </div>';
+echo '    </div>';
+echo '  </div>';
+echo '</div>';
 
 echo $OUTPUT->footer();

@@ -35,12 +35,25 @@ class renderer extends \plugin_renderer_base {
      */
     public function render_tree(tree $tree) {
         $return = html_writer::start_tag('div', ['class' => 'profile_tree']);
+
         $categories = $tree->categories;
         foreach ($categories as $category) {
             $return .= $this->render($category);
         }
+
         $return .= html_writer::end_tag('div');
         return $return;
+    }
+
+    private function get_category_column($categoryname) {
+        $rightcategories = ['reports', 'loginactivity', 'miscellaneous', 'mobile', 'administration'];
+        $leftcategories = ['contact', 'coursedetails'];
+        if (in_array($categoryname, $rightcategories)) {
+            return 'right';
+        } else if (in_array($categoryname, $leftcategories)) {
+            return 'left';
+        }
+        return 'left';
     }
 
     /**
@@ -50,6 +63,9 @@ class renderer extends \plugin_renderer_base {
      * @return string
      */
     public function render_category(category $category) {
+        if ($category->name === 'privacyandpolicies') {
+            return '';
+        }
         $return = html_writer::start_tag(
             'section',
             ['class' => 'node_category card d-inline-block w-100 mb-3 ' . (string) $category->classes],

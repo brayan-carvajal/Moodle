@@ -18,7 +18,9 @@ $CFG->dboptions = array (
   'dbcollation' => 'utf8mb4_unicode_ci',
 );
 
-$CFG->wwwroot   = 'http://localhost';
+$CFG->wwwroot = 'https://slimy-rubdown-credit.ngrok-free.dev';
+$CFG->reverseproxy = true;
+$CFG->sslproxy = true;
 $CFG->dataroot  = 'C:\\Users\\BrayanEstivenCarvaja\\Downloads\\Moodle-v500\\server\\moodledata';
 $CFG->admin     = 'admin';
 
@@ -28,3 +30,4 @@ require_once(__DIR__ . '/lib/setup.php');
 
 // There is no php closing tag in this file,
 // it is intentional because it prevents trailing whitespace problems!
+
