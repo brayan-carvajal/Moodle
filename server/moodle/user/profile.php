@@ -209,7 +209,84 @@ if ($PAGE->user_allowed_editing()) {
 // Trigger a user profile viewed event.
 profile_view($user, $usercontext);
 
-echo '<style>body.hideprofilepageheader header#page-header > div.w-100 {display:none !important;} body.hideprofilepageheader header#page-header {min-height:0; padding:0; margin:0;}</style>';
+echo '<style>
+body.hideprofilepageheader header#page-header > div.w-100 {display:none !important;}
+body.hideprofilepageheader header#page-header {min-height:0; padding:0; margin:0;}
+body.hideprofilepageheader #topofscroll.main-inner,
+body.hideprofilepageheader #page-content,
+body.hideprofilepageheader #region-main-box {
+    padding:0;
+    margin:0;
+}
+.profile-columns-wrapper {
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+    align-items:start;
+    width:100%;
+}
+.profile-column {
+    width:100%;
+    min-width:0;
+}
+.profile-column > .card,
+.profile-column > .profile_tree,
+.profile-column > .profile_tree .node_category.card {
+    width:100%;
+    max-width:100%;
+}
+.profile-column > .profile_tree {
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+.profile-column > .profile_tree .node_category.card {
+    display:block;
+    margin:0 !important;
+    width:100%;
+    max-width:100%;
+}
+.profile-column .card,
+.profile-column .node_category.card {
+    border:1px solid #e5e7eb;
+    border-radius:0.5rem;
+    box-shadow:none;
+    width:100%;
+    background:#fff;
+    margin:0 !important;
+}
+.profile-column .card-body,
+.profile-column .node_category.card .card-body {
+    padding:24px;
+    box-sizing:border-box;
+}
+.profile-user-card .userpicture img {
+    width:110px;
+    height:110px;
+    object-fit:cover;
+    border-radius:50%;
+    border:1px solid #f2f3f7;
+    margin-bottom:0.75rem;
+}
+.profile-user-card h3 {
+    margin-bottom:0.75rem;
+    font-size:1.15rem;
+}
+.profile-user-card .btn {
+    display:block;
+    width:100%;
+    max-width:220px;
+    margin:0.75rem auto 0;
+}
+@media (max-width: 767px) {
+    .profile-columns-wrapper {
+        grid-template-columns:1fr;
+    }
+    .profile-column > .profile_tree {
+        gap:16px;
+    }
+}
+</style>';
 
 // TODO WORK OUT WHERE THE NAV BAR IS!
 echo $OUTPUT->header();
@@ -234,40 +311,59 @@ if ($user->description && !isset($hiddenfields['description'])) {
 // Render custom blocks.
 $renderer = $PAGE->get_renderer('core_user', 'myprofile');
 $tree = core_user\output\myprofile\manager::build_tree($user, $currentuser);
+$profiletreehtml = $renderer->render($tree);
+
+$middlegroups = [];
+$rightgroups = [];
+if (preg_match_all('/<section class="node_category[^>]*>.*?<\/section>/s', $profiletreehtml, $matches)) {
+    foreach ($matches[0] as $sectionhtml) {
+        if (preg_match('/<h3 class="lead">(.*?)<\/h3>/s', $sectionhtml, $titlematch)) {
+            $title = trim($titlematch[1]);
+            if (in_array($title, ['Detalles de usuario', 'Detalles del curso'])) {
+                $middlegroups[] = $sectionhtml;
+            } else {
+                $rightgroups[] = $sectionhtml;
+            }
+        }
+    }
+}
 
 echo '<div id="topofscroll" class="main-inner">';
 echo '  <div id="page-content" class="d-print-block">';
 echo '    <div id="region-main-box">';
-echo '      <div class="row">';
+echo '      <div class="profile-columns-wrapper">';
 
-// Columna izquierda: foto y nombre del usuario.
-echo '        <div class="col-md-4">';
-echo '          <div class="card card-body card-profile">';
-echo '            <div class="userpicture text-center mb-2">';
-echo '              ' . $OUTPUT->user_picture($user, ['size' => 100, 'class' => 'userpicture']);
+// Columna 1: foto y nombre del usuario.
+echo '        <div class="profile-column">';
+echo '          <div class="card card-profile profile-user-card">';
+echo '            <div class="card-body">';
+echo '              <div class="userpicture text-center mb-2">';
+echo '                ' . $OUTPUT->user_picture($user, ['size' => 100, 'class' => 'userpicture']);
+echo '              </div>';
+echo '              <h3 class="text-center fw-bold mb-2">' . fullname($user) . '</h3>';
+echo '              <div class="headerbuttons text-center mb-2"></div>';
+echo '              <a href="' . (new moodle_url('/user/editadvanced.php', ['id' => $user->id, 'course' => !empty($course) ? $course->id : 1, 'returnto' => 'profile']))->out() . '" class="btn btn-sm btn-primary btn-block my-2"><i class="fa fa-edit"></i> Editar perfil</a>';
+echo '              <div class="userinfo my-2"></div>';
 echo '            </div>';
-echo '            <h3 class="text-center fw-bold mb-2">' . fullname($user) . '</h3>';
-echo '            <div class="headerbuttons text-center mb-2"></div>';
-echo '            <a href="' . (new moodle_url('/user/editadvanced.php', ['id' => $user->id, 'course' => !empty($course) ? $course->id : 1, 'returnto' => 'profile']))->out() . '" class="btn btn-sm btn-primary btn-block my-2"><i class="fa fa-edit"></i> Editar perfil</a>';
-echo '            <div class="userinfo my-2"></div>';
 echo '          </div>';
 echo '        </div>';
 
-// Columna derecha: contenido del perfil.
-echo '        <div class="col-md-8">';
-echo '          <section id="region-main" aria-label="Contenido">';
-echo '            <span id="user-notifications"></span>';
-echo '            <div role="main">';
-echo '              <span id="maincontent"></span>';
-echo '              <div class="userprofile">';
-echo '                <h2 class="sr-only">Perfil de usuario</h2>';
-echo '                <section id="block-region-content" class="block-region" data-blockregion="content" data-droptarget="1" aria-labelledby="content-block-region-heading">';
-echo '                  <h2 class="sr-only" id="content-block-region-heading">Bloques de contenido principales</h2>';
-echo '                </section>';
-echo '                ' . $renderer->render($tree);
-echo '              </div>';
-echo '            </div>';
-echo '          </section>';
+// Columna 2: detalles de usuario y del curso.
+echo '        <div class="profile-column">';
+echo '          <div class="profile_tree">';
+foreach ($middlegroups as $grouphtml) {
+    echo $grouphtml;
+}
+echo '          </div>';
+echo '        </div>';
+
+// Columna 3: misc, informes, accesos y app móvil.
+echo '        <div class="profile-column">';
+echo '          <div class="profile_tree">';
+foreach ($rightgroups as $grouphtml) {
+    echo $grouphtml;
+}
+echo '          </div>';
 echo '        </div>';
 
 echo '      </div>';
