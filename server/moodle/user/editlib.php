@@ -387,6 +387,7 @@ function useredit_shared_definition(&$mform, $editoroptions, $filemanageroptions
 
     // Moodle optional fields.
     $mform->addElement('header', 'moodle_optional', get_string('optional', 'form'));
+    $mform->setExpanded('moodle_optional', false);
 
     $mform->addElement('text', 'idnumber', get_string('idnumber'), 'maxlength="255" size="25"');
     $mform->setType('idnumber', core_user::get_property_type('idnumber'));
@@ -407,6 +408,21 @@ function useredit_shared_definition(&$mform, $editoroptions, $filemanageroptions
 
     $mform->addElement('text', 'address', get_string('address'), 'maxlength="255" size="25"');
     $mform->setType('address', core_user::get_property_type('address'));
+
+    $mform->addElement('header', 'moodle_identificacion', 'Datos de Identificación');
+    $mform->setExpanded('moodle_identificacion', false);
+
+    $mform->addElement('header', 'moodle_lugar_expedicion', 'Lugar de Expedición Documento Identidad');
+    $mform->setExpanded('moodle_lugar_expedicion', false);
+
+    $mform->addElement('header', 'moodle_datos_adicionales', 'Datos Adicionales');
+    $mform->setExpanded('moodle_datos_adicionales', false);
+
+    $mform->addElement('header', 'moodle_informacion_academica', 'Información Académica');
+    $mform->setExpanded('moodle_informacion_academica', false);
+
+    $mform->addElement('header', 'moodle_otros_campos', 'Otros Campos');
+    $mform->setExpanded('moodle_otros_campos', false);
 }
 
 /**
