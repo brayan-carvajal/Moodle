@@ -72,36 +72,52 @@
                     {{> core/user_menu_metadata }}
                 </span>
             </a>
-            <div id="user-action-menu" class="dropdown-menu dropdown-menu-end">
+             <div id="user-action-menu" class="dropdown-menu dropdown-menu-right">
                 <div id="usermenu-carousel" class="carousel slide" data-touch="false" data-interval="false" data-keyboard="false">
                     <div class="carousel-inner">
-                        <div id="carousel-item-main" class="carousel-item active" role="menu" tabindex="-1" aria-label="{{#str}}user{{/str}}">
-                            <a id="accessibilitysettings-control" href="#" class="dropdown-item" role="menuitem" tabindex="-1" aria-label="{{#str}}themesettings:accessibility, theme_moove{{/str}}">
-                                {{#str}}themesettings:accessibility, theme_moove{{/str}}
+                        <div id="carousel-item-main" class="carousel-item active" role="menu" tabindex="-1" aria-label="Usuario">
+                            <a id="accessibilitysettings-control" href="#" class="dropdown-item" role="menuitem" tabindex="-1" aria-label="Accesibilidad">
+                                Accesibilidad
                             </a>
 
                             <div class="dropdown-divider"></div>
 
-                            {{> core/user_action_menu_items }}
+                            <a href="https://follicle-purify-agility.ngrok-free.dev/user/profile.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                Ver Perfil
+                            </a>
+
+                            <a href="https://follicle-purify-agility.ngrok-free.dev/user/edit.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                Editar Perfil
+                            </a>
+
+                            <a href="https://follicle-purify-agility.ngrok-free.dev/grade/report/overview/index.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                Calificaciones
+                            </a>
+
+                            <a href="https://follicle-purify-agility.ngrok-free.dev/calendar/view.php?view=month" class="dropdown-item" role="menuitem" tabindex="-1">
+                                Calendario
+                            </a>
+
+                            <a href="https://uninavarraeduco-my.sharepoint.com/:b:/g/personal/edisenografico_uninavarra_edu_co/EW7VguExRXZIuiatXv6WEq0BkKY2uu-64DUFOj2VDrKndQ?e=oX4686" class="dropdown-item" role="menuitem" tabindex="-1">
+                                Reglamento estudiantil
+                            </a>
+
+                            <div class="dropdown-divider"></div>
+
+                            <a href="https://follicle-purify-agility.ngrok-free.dev/user/preferences.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                Preferencias
+                            </a>
+
+                            <a href="https://follicle-purify-agility.ngrok-free.dev/course/switchrole.php?id=1&amp;switchrole=-1&amp;returnurl=%2Fuser%2Fedit.php%3Fcourse%3D1%26id%3D5952" class="dropdown-item" role="menuitem" tabindex="-1">
+                                Cambiar rol a...
+                            </a>
+
+                            <div class="dropdown-divider"></div>
+
+                            <a href="https://follicle-purify-agility.ngrok-free.dev/login/logout.php?sesskey=BGG6yudTKa" class="dropdown-item" role="menuitem" tabindex="-1">
+                                Cerrar sesión
+                            </a>
                         </div>
-                        {{#submenus}}
-                            <div id="carousel-item-{{id}}" role="menu" class="carousel-item submenu" tabindex="-1" aria-label="{{title}}">
-                                <div class="d-flex flex-column h-100">
-                                    <div class="header">
-                                        <button type="button" class="btn btn-icon carousel-navigation-link text-decoration-none text-body" data-carousel-target-id="carousel-item-main" aria-label="{{#str}}usermenugoback{{/str}}">
-                                            <span class="dir-rtl-hide">{{#pix}}i/arrow-left{{/pix}}</span>
-                                            <span class="dir-ltr-hide">{{#pix}}i/arrow-right{{/pix}}</span>
-                                        </button>
-                                        <span class="ps-2" id="carousel-item-title-{{id}}">{{title}}</span>
-                                    </div>
-                                    <div class="dropdown-divider"></div>
-                                    <div class="items h-100 overflow-auto" role="menu" aria-labelledby="carousel-item-title-{{id}}">
-                                        {{> core/user_action_menu_submenu_items }}
-                                    </div>
-                                </div>
-                            </div>
-                        {{/submenus}}
-                    </div>
                 </div>
             </div>
         </div>

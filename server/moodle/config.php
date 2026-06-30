@@ -18,7 +18,7 @@ $CFG->dboptions = array (
   'dbcollation' => 'utf8mb4_unicode_ci',
 );
 
-$CFG->wwwroot = 'https://slimy-rubdown-credit.ngrok-free.dev';
+$CFG->wwwroot = 'https://follicle-purify-agility.ngrok-free.dev';
 $CFG->reverseproxy = true;
 $CFG->sslproxy = true;
 $CFG->dataroot  = 'C:\\Users\\BrayanEstivenCarvaja\\Downloads\\Moodle-v500\\server\\moodledata';
