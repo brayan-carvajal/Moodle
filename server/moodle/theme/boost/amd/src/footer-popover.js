@@ -37,6 +37,10 @@ export const init = () => {
     const footerButton = document.querySelector(SELECTORS.FOOTERBUTTON);
     const footerArrow = document.querySelector(SELECTORS.FOOTERARROW);
 
+    if (!footerButton || !container) {
+        return;
+    }
+
     new Popover(footerButton, {
         content: getFooterContent,
         container: container,
