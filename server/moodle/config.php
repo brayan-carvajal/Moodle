@@ -24,6 +24,14 @@ $CFG->sslproxy = true;
 $CFG->dataroot  = 'C:\\Users\\BrayanEstivenCarvaja\\Downloads\\Moodle-v500\\server\\moodledata';
 $CFG->admin     = 'admin';
 
+$CFG->passwordpolicy = true;
+$CFG->minpasswordlength = 7;
+$CFG->minpassworddigits = 0;
+$CFG->minpasswordlower = 0;
+$CFG->minpasswordupper = 0;
+$CFG->minpasswordnonalphanum = 0;
+$CFG->maxconsecutiveidentchars = 100;
+
 $CFG->directorypermissions = 0777;
 
 require_once(__DIR__ . '/lib/setup.php');

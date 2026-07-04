@@ -133,6 +133,14 @@ foreach ($customitems as $item) {
 $primary = new core\navigation\output\primary($PAGE);
 $renderer = $PAGE->get_renderer('core');
 $primarymenu = $primary->export_for_template($renderer);
+
+if (!empty($primarymenu['mobileprimarynav'])) {
+    $primarymenu['mobileprimarynav'] = array_values(array_filter($primarymenu['mobileprimarynav'], function($item) {
+        $url = $item['url'] ?? '';
+        $text = $item['text'] ?? '';
+        return $url !== '/my/' && stripos($text, 'Área personal') === false && stripos($text, 'myhome') === false && strpos($text, 'Página Principal') === false;
+    }));
+}
 $buildregionmainsettings = !$PAGE->include_region_main_settings_in_header_actions() && !$PAGE->has_secondary_navigation();
 // If the settings menu will be included in the header then don't add it here.
 $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settings_menu() : false;

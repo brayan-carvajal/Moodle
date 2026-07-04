@@ -184,23 +184,12 @@ class visibility implements named_templatable, renderable {
             return null;
         }
 
-        // Visible activities in hidden sections are always considered stealth.
-        if ($this->section->visible && count($selectableoptions) === 1) {
-            $option = reset($selectableoptions);
-            $actionlabel = $option->value === 'show' ? 'modshow' : 'modhide';
-            return new action_menu_link_secondary(
-                $option->url,
-                $option->icon,
-                get_string($actionlabel, 'moodle'),
-                $choice->get_option_extras($option->value)
-            );
-        }
-
         return new action_menu_subpanel(
             get_string('availability', 'moodle'),
             $choice,
             ['class' => 'editing_availability'],
-            new pix_icon('t/hide', '', 'moodle', ['class' => 'iconsmall'])
+            new pix_icon('t/hide', '', 'moodle', ['class' => 'iconsmall']),
+            'fa-regular fa-eye'
         );
     }
 
@@ -245,13 +234,12 @@ class visibility implements named_templatable, renderable {
             $this->get_option_data('hide', 'cmHide', 'cm_hide')
         );
 
-        if ($CFG->allowstealth && $this->format->allow_stealth_module_visibility($this->mod, $this->section)) {
-            $choice->add_option(
-                'stealth',
-                get_string('availability_stealth', 'core_courseformat'),
-                $this->get_option_data('stealth', 'cmStealth', 'cm_stealth')
-            );
-        }
+        $choice->add_option(
+            'stealth',
+            get_string('availability_stealth', 'core_courseformat'),
+            $this->get_option_data('stealth', 'cmStealth', 'cm_stealth')
+        );
+
         return $choice;
     }
 
@@ -270,9 +258,19 @@ class visibility implements named_templatable, renderable {
             returnurl: $format->get_view_url($format->get_sectionnum(), ['navigation' => true]),
         );
 
+        $ficon = '';
+        if ($name === 'show') {
+            $ficon = 'fa-regular fa-eye';
+        } else if ($name === 'hide') {
+            $ficon = 'fa fa-eye-slash';
+        } else if ($name === 'stealth') {
+            $ficon = 'fa fa-low-vision';
+        }
+
         return [
             'description' => get_string("availability_{$name}_help", 'core_courseformat'),
             'icon' => $this->get_icon($name),
+            'faicon' => $ficon,
             'url' => $nonajaxurl,
             'extras' => [
                 'data-id' => $this->mod->id,

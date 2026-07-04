@@ -329,40 +329,6 @@ class primary implements renderable, templatable {
             return $value;
         }, $info->navitems);
 
-        // Include the language menu as a submenu within the user menu.
-        $languagemenu = new \core\output\language_menu($this->page);
-        $langmenu = $languagemenu->export_for_template($output);
-        if (!empty($langmenu)) {
-            $languageitems = $langmenu['items'];
-            // If there are available languages, generate the data for the the language selector submenu.
-            if (!empty($languageitems)) {
-                $langsubmenuid = uniqid();
-                // Generate the data for the link to language selector submenu.
-                $language = (object) [
-                    'itemtype' => 'submenu-link',
-                    'submenuid' => $langsubmenuid,
-                    'title' => get_string('language'),
-                    'divider' => false,
-                    'submenulink' => true,
-                ];
-
-                // Place the link before the 'Log out' menu item which is either the last item in the menu or
-                // second to last when 'Switch roles' is available.
-                $menuposition = count($modifiedarray) - 1;
-                if (has_capability('moodle/role:switchroles', $PAGE->context)) {
-                    $menuposition = count($modifiedarray) - 2;
-                }
-                array_splice($modifiedarray, $menuposition, 0, [$language]);
-
-                // Generate the data for the language selector submenu.
-                $submenusdata[] = (object)[
-                    'id' => $langsubmenuid,
-                    'title' => get_string('languageselector'),
-                    'items' => $languageitems,
-                ];
-            }
-        }
-
         // Add divider before the last item.
         $modifiedarray[count($modifiedarray) - 2]->divider = true;
         $usermenudata['items'] = $modifiedarray;

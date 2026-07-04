@@ -35,10 +35,10 @@ class subpanel extends action_link implements renderable {
      */
     protected $subpanel;
 
-    /**
-     * The number of instances of this action menu link (and its subclasses).
-     * @var int
-     */
+    /** @var string|null Custom Font Awesome icon classes for the subpanel trigger. */
+    protected $faicon;
+
+    /** @var int The number of instances of this action menu link (and its subclasses). */
     protected static $instance = 1;
 
     /**
@@ -47,12 +47,14 @@ class subpanel extends action_link implements renderable {
      * @param renderable $subpanel the subpanel content
      * @param array|null $attributes an optional array of attributes
      * @param pix_icon|null $icon an optional icon
+     * @param string|null $faicon an optional Font Awesome icon classes string
      */
     public function __construct(
         $text,
         renderable $subpanel,
         ?array $attributes = null,
-        ?pix_icon $icon = null
+        ?pix_icon $icon = null,
+        ?string $faicon = null
     ) {
         $this->text = $text;
         $this->subpanel = $subpanel;
@@ -61,6 +63,7 @@ class subpanel extends action_link implements renderable {
         }
         $this->attributes = (array) $attributes;
         $this->icon = $icon;
+        $this->faicon = $faicon;
     }
 
     /**
@@ -75,7 +78,11 @@ class subpanel extends action_link implements renderable {
         // The menu trigger icon collides with the subpanel item icon. Unlike regular menu items,
         // subpanel items usually does not use icons. To prevent the collision, subpanels use a diferent
         // context variable for item icon.
-        $data->itemicon = $data->icon;
+        if (!empty($this->faicon)) {
+            $data->itemicon = (object) ['faicon' => $this->faicon, 'hascustomicon' => true];
+        } else {
+            $data->itemicon = $data->icon;
+        }
         unset($data->icon);
         return $data;
     }

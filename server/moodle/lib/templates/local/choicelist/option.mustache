@@ -65,11 +65,18 @@
             {{#pix}} i/uncheckedcircle{{/pix}}
         </span>
     </div>
+    {{#hasfaicon}}
+    <div class="option-icon">
+        <i class="icon {{faicon}} fa-fw" aria-hidden="true"></i>
+    </div>
+    {{/hasfaicon}}
+    {{^hasfaicon}}
     {{#icon}}
     <div class="option-icon">
         {{#pix}}{{key}}, {{component}}, {{title}}{{/pix}}
     </div>
     {{/icon}}
+    {{/hasfaicon}}
     <div class="option-name">
         <a
             class="stretched-link text-wrap fw-bold {{!

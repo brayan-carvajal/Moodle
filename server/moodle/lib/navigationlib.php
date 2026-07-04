@@ -1455,9 +1455,13 @@ class global_navigation extends navigation_node {
                     // Only add dashboard to home if it's enabled.
                     $this->rootnodes['home'] = $this->add(get_string('myhome'), new moodle_url('/my/'),
                         self::TYPE_SETTING, null, 'myhome', new pix_icon('i/dashboard', ''));
-                    $this->rootnodes['home']->showinflatnavigation = true;
+                    $this->rootnodes['home']->showinflatnavigation = false;
                 }
             }
+            // Página Principal must always be present in flat navigation.
+            $this->rootnodes['sitehome'] = $this->add(get_string('sitehome'), new moodle_url('/'),
+                self::TYPE_SETTING, null, 'sitehome', new pix_icon('i/home', ''));
+            $this->rootnodes['sitehome']->showinflatnavigation = true;
         } else {
             // The home element should be the site because the root node is my moodle
             $this->rootnodes['home'] = $this->add(get_string('sitehome'), new moodle_url('/'),

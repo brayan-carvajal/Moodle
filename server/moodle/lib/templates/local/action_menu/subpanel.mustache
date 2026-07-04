@@ -36,12 +36,13 @@
     }
 }}
 <div
-    class="dropdown-subpanel position-relative dropend"
+    class="dropdown-subpanel position-relative dropleft"
     id="{{id}}"
+    {{#initialized}}data-sub-panel-initialized="true"{{/initialized}}
 >
     <a
         class="dropdown-item dropdown-toggle {{#disabled}} disabled {{/disabled}}"
-        href="{{url}}"
+        href="#"
         data-toggle="dropdown-subpanel"
         role="menuitem"
         aria-haspopup="true"
@@ -53,11 +54,16 @@
         {{/attributes}}
     >
         {{#itemicon}}
-            {{#pix}}{{key}}, {{component}}, {{title}}{{/pix}}
+            {{#hascustomicon}}
+                <i class="icon {{faicon}} fa-fw" aria-hidden="true"></i>
+            {{/hascustomicon}}
+            {{^hascustomicon}}
+                {{#pix}}{{key}}, {{component}}, {{title}}{{/pix}}
+            {{/hascustomicon}}
         {{/itemicon}}
         <span class="menu-action-text" id="actionmenuactionsubpanel-{{instance}}">{{{text}}}</span>
     </a>
-    <div class="dropdown-menu dropdown-subpanel-content" role="menu" data-bs-popper="static">
+    <div class="dropdown-menu dropdown-subpanel-content" role="menu" aria-hidden="true" data-bs-popper="static">
         {{{subpanelcontent}}}
     </div>
 </div>

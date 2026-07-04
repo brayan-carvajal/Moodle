@@ -71,6 +71,7 @@ class choicelist implements named_templatable, renderable {
             'url' => $definition['url'] ?? null,
             'icon' => $definition['icon'] ?? null,
             'disabled' => (!empty($definition['disabled'])) ? true : false,
+            'faicon' => $definition['faicon'] ?? null,
         ];
         if (!empty($definition['selected'])) {
             $this->selected = $value;
@@ -268,6 +269,7 @@ class choicelist implements named_templatable, renderable {
                 $option['icon'] = $option['icon']->export_for_pix($output);
             }
             $option['hasicon'] = !empty($option['icon']);
+            $option['hasfaicon'] = !empty($option['faicon']);
 
             if (!empty($option['url'])) {
                 $option['url'] = $option['url']->out(true);
