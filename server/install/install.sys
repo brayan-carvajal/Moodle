@@ -1,4 +1,4 @@
-DIR = C:\Users\BrayanEstivenCarvaja\Downloads\Moodle-v500\server
+DIR = C:\Users\BrayanEstivenCarvaja\Downloads\Moodle\server
 xampp = ?.?.?
 server = 1.8.0
 perl = 0
