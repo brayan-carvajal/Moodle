@@ -1,0 +1,162 @@
+- generic [active] [ref=f20e1]:
+  - status
+  - generic [ref=f20e2]:
+    - link "Saltar al contenido principal" [ref=f20e3] [cursor=pointer]:
+      - /url: "#maincontent"
+    - navigation "Navegación del sitio" [ref=f20e4]:
+      - link [ref=f20e5] [cursor=pointer]:
+        - /url: http://localhost/
+        - img "Uninavarra Virtual etR" [ref=f20e6]
+      - navigation [ref=f20e8]:
+        - menubar [ref=f20e9]:
+          - menuitem "Página Principal" [ref=f20e10] [cursor=pointer]
+          - menuitem "Mis cursos" [ref=f20e11] [cursor=pointer]
+          - menuitem "Administración del sitio" [ref=f20e12] [cursor=pointer]
+          - menuitem "Más " [ref=f20e13] [cursor=pointer]
+          - text: 
+      - list [ref=f20e14]
+      - generic [ref=f20e15]:
+        - button "Mostrar la ventana de notificaciones cuando no hay ninguna" [ref=f20e17] [cursor=pointer]:
+          - generic [ref=f20e18]: 
+        - button "Mostrar/ocultar cajón de mensajería" [ref=f20e20] [cursor=pointer]:
+          - generic [ref=f20e21]: 
+        - link "" [ref=f20e25] [cursor=pointer]:
+          - /url: https://uninavarra.edu-labs.co/local/mail/view.php?t=inbox
+        - button "Menú de usuario" [ref=f20e30] [cursor=pointer]: 
+        - generic [ref=f20e36]:
+          - generic [ref=f20e37]: Modo de edición
+          - checkbox "Modo de edición" [checked] [ref=f20e39]
+    - navigation [ref=f20e42]:
+      - menubar [ref=f20e43]:
+        - menuitem "General" [ref=f20e44] [cursor=pointer]
+        - menuitem "Usuarios" [ref=f20e45] [cursor=pointer]
+        - menuitem "Cursos" [ref=f20e46] [cursor=pointer]
+        - menuitem "Calificaciones" [ref=f20e47] [cursor=pointer]
+        - menuitem "Extensiones" [ref=f20e48] [cursor=pointer]
+        - menuitem "Apariencia" [ref=f20e49] [cursor=pointer]
+        - menuitem "Más " [ref=f20e50] [cursor=pointer]
+    - generic [ref=f20e51]:
+      - banner [ref=f20e52]:
+        - generic [ref=f20e54]:
+          - heading "Bienvenidos" [level=1] [ref=f20e58]
+          - generic [ref=f20e59]:
+            - generic [ref=f20e63]:
+              - textbox "Buscar" [ref=f20e64]
+              - generic: Buscar
+              - button "Buscar" [ref=f20e66] [cursor=pointer]:
+                - generic [ref=f20e67]: 
+            - generic:
+              - navigation "Control de navegación":
+                - list
+      - generic [ref=f20e69]:
+        - button "Abrir cajón de bloques" [ref=f20e71] [cursor=pointer]:
+          - generic [ref=f20e73]: 
+          - text: 
+        - main [ref=f20e78]:
+          - heading "Notificaciones" [level=2] [ref=f20e80]
+          - generic [ref=f20e81]:
+            - generic [ref=f20e82]:
+              - generic [ref=f20e83]: 
+              - heading "Soporte y servicios" [level=3] [ref=f20e85]
+            - paragraph [ref=f20e86]:
+              - text: Este tema fue desarrollado por
+              - link "conecti.me" [ref=f20e87] [cursor=pointer]:
+                - /url: https://conecti.me
+              - text: a Brazilian Moodle Partner Company.
+            - paragraph [ref=f20e88]:
+              - text: Need support for your Moodle site?
+              - link "Contáctanos." [ref=f20e89] [cursor=pointer]:
+                - /url: https://conecti.me
+              - text: It will be a pleasure to help you!
+            - link [ref=f20e90] [cursor=pointer]:
+              - /url: https://conecti.me
+              - img "Logo Conecti.me" [ref=f20e91]
+          - generic [ref=f20e92]:
+            - generic [ref=f20e93]:
+              - generic [ref=f20e94]: 
+              - heading "Our Partners" [level=3] [ref=f20e96]
+            - paragraph [ref=f20e97]: These are our partners who help Moodle and the community grow.
+            - link [ref=f20e100] [cursor=pointer]:
+              - /url: https://www.readspeaker.com/conecti-me
+              - img "Logo ReadSpeaker" [ref=f20e101]
+          - generic [ref=f20e102]:
+            - heading "¡Hay una nueva versión de Moodle disponible!" [level=3] [ref=f20e103]
+            - generic [ref=f20e105]:
+              - text: "Moodle 5.2+ (Build: 20260501) | Versión 2026042000.02 | Versión estable |"
+              - link "Descargar" [ref=f20e106] [cursor=pointer]:
+                - /url: https://download.moodle.org/download.php/direct/stable502/moodle-latest-502.zip
+              - text: "|"
+              - link "Más info..." [ref=f20e107] [cursor=pointer]:
+                - /url: https://download.moodle.org
+            - generic [ref=f20e109]:
+              - text: "Moodle 5.0.7+ (Build: 20260501) | Versión 2025041407.02 | Versión estable |"
+              - link "Descargar" [ref=f20e110] [cursor=pointer]:
+                - /url: https://download.moodle.org/download.php/direct/stable500/moodle-latest-500.zip
+              - text: "|"
+              - link "Más info..." [ref=f20e111] [cursor=pointer]:
+                - /url: https://download.moodle.org
+            - generic [ref=f20e113]:
+              - text: "Moodle 5.1.4+ (Build: 20260501) | Versión 2025100604.02 | Versión estable |"
+              - link "Descargar" [ref=f20e114] [cursor=pointer]:
+                - /url: https://download.moodle.org/download.php/direct/stable501/moodle-latest-501.zip
+              - text: "|"
+              - link "Más info..." [ref=f20e115] [cursor=pointer]:
+                - /url: https://download.moodle.org
+            - paragraph [ref=f20e116]: Se recomienda encarecidamente que actualice su sitio a la última versión para obtener todas las correcciones de bugs y de seguridad recientes.
+            - heading "¡Hay nuevas versiones disponibles para algunas de sus extensiones!" [level=3] [ref=f20e117]
+            - generic [ref=f20e118]:
+              - text: Vea la página
+              - link "Vista general de extensiones" [ref=f20e119] [cursor=pointer]:
+                - /url: http://localhost/admin/plugins.php?updatesonly=1
+              - text: para más detalles
+            - generic [ref=f20e120]:
+              - button "Compruebe actualizaciones disponibles" [ref=f20e123] [cursor=pointer]
+              - generic [ref=f20e124]: Última comprobación realizada el 2 de mayo de 2026, 11:55
+          - generic [ref=f20e125]:
+            - text: No se recomienda habilitar el ajuste PHP
+            - emphasis [ref=f20e126]: display_errors
+            - text: en sitios en producción debido a que algunos mensajes de error pueden revelar información sensible sobre su servidor.
+          - generic [ref=f20e127]:
+            - text: El script
+            - code [ref=f20e128]: admin/cli/cron.php
+            - text: nunca se ha ejecutado y debería ejecutarse cada 1 minutos.
+            - button "Ayuda" [ref=f20e129] [cursor=pointer]:
+              - img "Ayuda con Cron" [ref=f20e130]: 
+          - generic [ref=f20e131]:
+            - text: El servicio MoodleNet cerrará el 20 de abril de 2026. Si desea continuar usando MoodleNet en su situio, instale el plugin MoodleNet desde
+            - link [ref=f20e132] [cursor=pointer]:
+              - /url: https://github.com/moodlehq/moodle-tool_moodlenet
+              - text: el repositorio Moodle HQ GitHub
+              - img "Sse abre en ventana nueva" [ref=f20e133]: 
+            - text: y conéctelo a una instancia de MoodleNet autoalojada. A continuación, el campo de perfil de ID de MoodleNet se eliminará. Por favor, migre esos datos si los está usando para otros propósitos.
+          - generic [ref=f20e134]:
+            - paragraph [ref=f20e135]: Moodle incluye una característica que permite al usuario la opción de proveer retroalimentación acerca del software Moodle a través de una encuesta externa almacenada en el sitio de Moodle HQ. No se envía ninguna información de usuarios al servidor de la encuesta.
+            - paragraph [ref=f20e136]: Moodle HQ se esfuerza para ser abierto y transparente acerca de sus prácticas de recolección de información. Por esto, queremos asegurarnos que ud. está al tanto y en control de esta funcionalidad.
+            - paragraph [ref=f20e137]:
+              - text: La retroalimentación de los usuarios asistirá enormemente a Moodle HQ en mejorar el software Moodle. Para habilitar esta función, por favor, vaya a
+              - link "Configuración de retroalimentación" [ref=f20e138] [cursor=pointer]:
+                - /url: http://localhost/admin/settings.php?section=userfeedback
+              - text: .
+          - iframe [ref=f20e140]:
+            - generic [ref=f21e1]:
+              - paragraph [ref=f21e2]: Thank you for choosing Moodle!
+              - paragraph [ref=f21e3]: We believe that software, especially educational tools, should always be open and free. We rely on our community to support and help us to continuously improve our LMS.
+              - paragraph [ref=f21e4]:
+                - text: Support the work of our developers by making a
+                - link "donation" [ref=f21e5] [cursor=pointer]:
+                  - /url: https://moodle.com/donations/?utm_source=CTAbanner&utm_medium=platform&utm_campaign=name~donate20lms+cat~moodlebrand+mp~no+type~landingpage+date~05-20
+                - text: .
+              - link [ref=f21e7] [cursor=pointer]:
+                - /url: https://moodle.com/donations/?utm_source=CTAbanner&utm_medium=platform&utm_campaign=name~donate20lms+cat~moodlebrand+mp~no+type~landingpage+date~05-20
+                - img "Donation banner" [ref=f21e8]
+          - generic [ref=f20e141]:
+            - link "Moodle" [ref=f20e142] [cursor=pointer]:
+              - /url: http://moodle.org/
+            - 'link "5.0.6+ (Build: 20260320)" [ref=f20e143] [cursor=pointer]':
+              - /url: https://moodledev.io/general/releases
+            - text: Copyright © 1999 onwards, Martin Dougiamasand
+            - link "many other contributors" [ref=f20e144] [cursor=pointer]:
+              - /url: http://moodle.org/dev
+            - text: .
+            - link "GNU Public License" [ref=f20e145] [cursor=pointer]:
+              - /url: https://moodledev.io/general/license

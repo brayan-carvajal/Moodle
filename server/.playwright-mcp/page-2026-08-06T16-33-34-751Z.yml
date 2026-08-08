@@ -1,0 +1,260 @@
+- generic [active] [ref=f20e1]:
+  - status
+  - generic [ref=f20e2]:
+    - link "Saltar al contenido principal" [ref=f20e3] [cursor=pointer]:
+      - /url: "#maincontent"
+    - navigation "Navegación del sitio" [ref=f20e4]:
+      - link [ref=f20e5] [cursor=pointer]:
+        - /url: http://localhost/
+        - img "Uninavarra Virtual etR" [ref=f20e6]
+      - navigation [ref=f20e8]:
+        - menubar [ref=f20e9]:
+          - menuitem "Página Principal" [ref=f20e10] [cursor=pointer]
+          - menuitem "Mis cursos" [ref=f20e11] [cursor=pointer]
+          - menuitem "Administración del sitio" [ref=f20e12] [cursor=pointer]
+          - menuitem "Estudiantes " [ref=f20e13] [cursor=pointer]
+          - menuitem "Biblioteca" [ref=f20e14] [cursor=pointer]
+          - menuitem "Kopere Dashboard" [ref=f20e15] [cursor=pointer]
+          - text: 
+      - list [ref=f20e16]
+      - generic [ref=f20e17]:
+        - button "Mostrar la ventana de notificaciones cuando no hay ninguna" [ref=f20e19] [cursor=pointer]:
+          - generic [ref=f20e20]: 
+        - button "Mostrar/ocultar cajón de mensajería" [ref=f20e22] [cursor=pointer]:
+          - generic [ref=f20e23]: 
+        - link "" [ref=f20e27] [cursor=pointer]:
+          - /url: https://uninavarra.edu-labs.co/local/mail/view.php?t=inbox
+        - button "Menú de usuario" [ref=f20e32] [cursor=pointer]: 
+        - generic [ref=f20e38]:
+          - generic [ref=f20e39]: Modo de edición
+          - checkbox "Modo de edición" [checked] [ref=f20e41]
+    - navigation [ref=f20e44]:
+      - menubar [ref=f20e45]:
+        - menuitem "General" [ref=f20e46] [cursor=pointer]
+        - menuitem "Usuarios" [ref=f20e47] [cursor=pointer]
+        - menuitem "Cursos" [ref=f20e48] [cursor=pointer]
+        - menuitem "Calificaciones" [ref=f20e49] [cursor=pointer]
+        - menuitem "Extensiones" [ref=f20e50] [cursor=pointer]
+        - menuitem "Apariencia" [ref=f20e51] [cursor=pointer]
+        - menuitem "Servidor" [ref=f20e52] [cursor=pointer]
+        - menuitem "Informes" [ref=f20e53] [cursor=pointer]
+        - menuitem "Desarrollo" [ref=f20e54] [cursor=pointer]
+        - text: 
+    - generic [ref=f20e55]:
+      - banner [ref=f20e56]:
+        - generic [ref=f20e58]:
+          - heading "Bienvenidos" [level=1] [ref=f20e62]
+          - generic [ref=f20e63]:
+            - generic [ref=f20e67]:
+              - textbox "Buscar" [ref=f20e68]
+              - generic: Buscar
+              - button "Buscar" [ref=f20e70] [cursor=pointer]:
+                - generic [ref=f20e71]: 
+            - navigation "Control de navegación" [ref=f20e74]:
+              - list [ref=f20e75]:
+                - listitem [ref=f20e76]:
+                  - link "Correo electrónico" [ref=f20e77] [cursor=pointer]:
+                    - /url: http://localhost/admin/category.php?category=email
+                - listitem [ref=f20e78]:  Configuración de correo saliente
+      - generic [ref=f20e79]:
+        - button "Abrir cajón de bloques" [ref=f20e81] [cursor=pointer]:
+          - generic [ref=f20e83]: 
+          - text: 
+        - main [ref=f20e88]:
+          - generic [ref=f20e91]:
+            - heading "Configuración de correo saliente" [level=2] [ref=f20e92]
+            - group [ref=f20e93]:
+              - heading "SMTP" [level=3] [ref=f20e95]
+              - paragraph [ref=f20e97]: Configuraciones del Simple Mail Transfer Protocol (SMTP) para envío de correo electrónico.
+              - generic [ref=f20e98]:
+                - generic [ref=f20e99]:
+                  - generic [ref=f20e100]:
+                    - text: Servidores SMTP
+                    - generic [ref=f20e101]: Definido en config.php
+                  - generic [ref=f20e102]: smtphosts
+                - generic [ref=f20e103]:
+                  - textbox "Servidores SMTP Definido en config.php" [disabled] [ref=f20e105]: smtp.gmail.com:587
+                  - generic [ref=f20e106]: "Valor por defecto: Vacío"
+                  - paragraph [ref=f20e108]: Escriba el nombre completo de uno o más servidores SMTP locales que Moodle usará para enviar correo (e.g., 'mail.a.com' o 'mail.a.com;mail.b.com'). Si lo deja en blanco, Moodle usará el método PHP por defecto para enviar correo.
+              - generic [ref=f20e109]:
+                - generic [ref=f20e110]:
+                  - generic [ref=f20e111]:
+                    - text: Seguridad SMTP
+                    - generic [ref=f20e112]: Definido en config.php
+                  - generic [ref=f20e113]: smtpsecure
+                - generic [ref=f20e114]:
+                  - combobox "Seguridad SMTP Definido en config.php" [disabled] [ref=f20e116]:
+                    - option "Ninguno"
+                    - option "SSL"
+                    - option "TLS" [selected]
+                  - generic [ref=f20e117]: "Valor por defecto: Ninguno"
+                  - paragraph [ref=f20e119]: Si el servidor SMTP requiere conexión segura, especifique el tipo correcto de protocolo.
+              - generic [ref=f20e120]:
+                - generic [ref=f20e121]:
+                  - generic [ref=f20e122]: SMTP Auth Type
+                  - generic [ref=f20e123]: smtpauthtype
+                - generic [ref=f20e124]:
+                  - combobox "SMTP Auth Type" [ref=f20e126]:
+                    - option "LOGIN" [selected]
+                    - option "PLAIN"
+                    - option "NTLM"
+                    - option "CRAM-MD5"
+                  - generic [ref=f20e127]: "Valor por defecto: LOGIN"
+                  - paragraph [ref=f20e129]: Esto configura el tipo de autenticación a usar en el servidor SMTP.
+              - generic [ref=f20e130]:
+                - generic [ref=f20e131]:
+                  - generic [ref=f20e132]:
+                    - text: Nombre de usuario SMTP
+                    - generic [ref=f20e133]: Definido en config.php
+                  - generic [ref=f20e134]: smtpuser
+                - generic [ref=f20e135]:
+                  - textbox "Nombre de usuario SMTP Definido en config.php" [disabled] [ref=f20e137]: brayancarvajalpadilla02@gmail.com
+                  - generic [ref=f20e138]: "Valor por defecto: Vacío"
+                  - paragraph [ref=f20e140]: Si antes ha especificado un servidor SMTP, y el servidor requiere identificación, escriba aquí el nombre de usuario y la contraseña.
+              - generic [ref=f20e141]:
+                - generic [ref=f20e142]:
+                  - generic [ref=f20e143]:
+                    - text: Contraseña SMTP
+                    - generic [ref=f20e144]: Definido en config.php
+                  - generic [ref=f20e145]: smtppass
+                - generic [ref=f20e146]:
+                  - textbox "Contraseña SMTP Definido en config.php" [disabled] [ref=f20e148]: "********"
+                  - paragraph [ref=f20e150]: Si antes ha especificado un servidor SMTP, y el servidor requiere identificación, escriba aquí el nombre de usuario y la contraseña.
+              - generic [ref=f20e151]:
+                - generic [ref=f20e152]:
+                  - generic [ref=f20e153]: Límite de sesión SMTP
+                  - generic [ref=f20e154]: smtpmaxbulk
+                - generic [ref=f20e155]:
+                  - textbox "Límite de sesión SMTP" [ref=f20e157]: "1"
+                  - generic [ref=f20e158]: "Valor por defecto: 1"
+                  - paragraph [ref=f20e160]: Número máximo de mensajes enviados por sesión SMTP. La agrupación de mensajes puede agilizar el envío de emails. Valores inferiores a 2 fuerzan la creación de una nueva sesión SMTP para cada email.
+              - heading "No-responder y dominio" [level=3] [ref=f20e161]
+              - paragraph [ref=f20e163]: Ajustes para No-reply y dominios configurados.
+              - generic [ref=f20e164]:
+                - generic [ref=f20e165]:
+                  - generic [ref=f20e166]: Dirección 'no-reply'
+                  - generic [ref=f20e167]: noreplyaddress
+                - generic [ref=f20e168]:
+                  - textbox "Dirección 'no-reply'" [ref=f20e170]: aprendizelearning@uninavarra.edu.co
+                  - paragraph [ref=f20e172]: A veces los emails son enviados por el usuario (e.g., mensajes a un foro). La dirección email especificada aquí se usará como dirección "De" en aquellos casos en que los receptores no puedan replicar directamente al usuario (e.g., cuando un usuario elige mantener oculta su dirección).
+              - generic [ref=f20e173]:
+                - generic [ref=f20e174]:
+                  - generic [ref=f20e175]: Dominios de correo electrónico permitidos
+                  - generic [ref=f20e176]: allowedemaildomains
+                - generic [ref=f20e177]:
+                  - textbox "Dominios de correo electrónico permitidos" [ref=f20e179]
+                  - generic [ref=f20e180]: "Valor por defecto: Vacío"
+                  - paragraph [ref=f20e182]: Liste los dominios de correo electrónico que se permiten divulgar en la sección "De" del correo electrónico saliente. El valor predeterminado "Vacío" utilizará la dirección No-reply para todos los mensajes de correo salientes. Se permite el uso de comodines, por ejemplo *.example.com permitirá que los correos electrónicos sean enviados desde cualquier subdominio de example.com, pero no del propio dominio ejemplo.com. Este último requerirá una entrada independiente en el listado.
+              - heading "Desvío de correo electrónico" [level=3] [ref=f20e183]
+              - paragraph [ref=f20e185]: Se usa como protección en entornos de desarrollo al probar correos electrónicos y no debe usarse en producción.
+              - generic [ref=f20e186]:
+                - generic [ref=f20e187]:
+                  - generic [ref=f20e188]: Desviar todos los correos electrónicos
+                  - generic [ref=f20e189]: divertallemailsto
+                - generic [ref=f20e190]:
+                  - textbox "Desviar todos los correos electrónicos" [ref=f20e192]
+                  - generic [ref=f20e193]: "Valor por defecto: Vacío"
+                  - paragraph [ref=f20e195]: Si se establece este valor, todos los correos electrónicos se desviarán a esta única dirección de correo electrónico.
+              - generic [ref=f20e196]:
+                - generic [ref=f20e197]:
+                  - generic [ref=f20e198]: Excepciones de desvío de correo electrónico
+                  - generic [ref=f20e199]: divertallemailsexcept
+                - generic [ref=f20e200]:
+                  - textbox "Excepciones de desvío de correo electrónico" [ref=f20e202]
+                  - generic [ref=f20e203]: "Valor por defecto: Vacío"
+                  - generic [ref=f20e204]:
+                    - paragraph [ref=f20e205]: Una lista de reglas de excepción de correo electrónico separadas por comas o líneas nuevas. Cada regla se interpreta como una expresión regular , por ejemplo
+                    - generic [ref=f20e206]: simone@acme.com .*@acme.com fred(\+.*)?@acme.com
+              - heading "Firma de correo electrónico DomainKeys Identified Mail (DKIM)" [level=3] [ref=f20e207]
+              - generic [ref=f20e208]:
+                - paragraph [ref=f20e209]: Si se configura el selector DKIM y se encuentra un archivo de certificado privado que coincide con el dominio de la dirección "De" del correo electrónico en $CFG->dataroot/dkim/[domain]/[selector].private entonces el correo electrónico se firmará. En la mayoría de los casos (por ejemplo, si allowedemaildomains está vacío), sólo se necesita un certificado en
+                - generic [ref=f20e210]: $CFG->dataroot/dkim/uninavarra.edu.co/[selector].private
+                - paragraph [ref=f20e211]:
+                  - text: . Para obtener más detalles sobre la configuración, consulte la documentación
+                  - link "Configuración de correo" [ref=f20e212] [cursor=pointer]:
+                    - /url: https://docs.moodle.org/500/es_co/Mail_configuration#DKIM
+                  - text: .
+              - generic [ref=f20e213]:
+                - generic [ref=f20e214]:
+                  - generic [ref=f20e215]: Selector DKIM
+                  - generic [ref=f20e216]: emaildkimselector
+                - generic [ref=f20e217]:
+                  - textbox "Selector DKIM" [ref=f20e219]
+                  - generic [ref=f20e220]: "Valor por defecto: Vacío"
+                  - paragraph [ref=f20e222]: El selector DKIM es arbitrario y sus registros DNS deben coincidir con él.
+              - heading "Probar configuración de correo saliente" [level=3] [ref=f20e223]
+              - paragraph [ref=f20e225]:
+                - text: "Nota: Antes de probar, por favor guarde su configuración."
+                - link "Probar configuración de correo saliente" [ref=f20e226] [cursor=pointer]:
+                  - /url: http://localhost/admin/testoutgoingmailconf.php
+              - heading "Configuraciones de como mostrar correo electrónico." [level=3] [ref=f20e227]
+              - paragraph [ref=f20e229]: Mostrar configuraciones para el correo electrónico de salida del Moodle.
+              - generic [ref=f20e230]:
+                - generic [ref=f20e231]:
+                  - generic [ref=f20e232]: Conjunto de caracteres
+                  - generic [ref=f20e233]: sitemailcharset
+                - generic [ref=f20e234]:
+                  - combobox "Conjunto de caracteres" [ref=f20e236]:
+                    - option "UTF-8" [selected]
+                    - option "EUC-JP"
+                    - option "GB18030"
+                    - option "GB2312"
+                    - option "ISO-2022-JP"
+                    - option "ISO-8859-1"
+                    - option "SHIFT-JIS"
+                  - generic [ref=f20e237]: "Valor por defecto: UTF-8"
+                  - paragraph [ref=f20e239]: Todos los emails generados por su sitio se enviarán en el juego de caracteres que aquí se especifique. En cualquier caso, cada usuario individual podrá ajustar esta opción si está habilitado el siguiente ajuste.
+              - generic [ref=f20e240]:
+                - generic [ref=f20e241]:
+                  - generic [ref=f20e242]: Permitir a usuarios seleccionar juego de caracteres
+                  - generic [ref=f20e243]: allowusermailcharset
+                - generic [ref=f20e244]:
+                  - checkbox "Permitir a usuarios seleccionar juego de caracteres" [ref=f20e246]
+                  - generic [ref=f20e247]: "Valor por defecto: No"
+                  - paragraph [ref=f20e249]: Si habilita esta opción, todos los usuarios del sitio podrán especificar su propio juego de caracteres para escribir emails.
+              - generic [ref=f20e250]:
+                - generic [ref=f20e251]:
+                  - generic [ref=f20e252]: Permitir adjuntos
+                  - generic [ref=f20e253]: allowattachments
+                - generic [ref=f20e254]:
+                  - checkbox "Permitir adjuntos" [checked] [ref=f20e256]
+                  - generic [ref=f20e257]: "Valor por defecto: Sí"
+                  - paragraph [ref=f20e259]: Al habilitar esta opción permitirá que se pueden enviar archivos adjuntos con los mensajes de correo electrónico generados por diversas funcionalidades dentro del sitio, como blogs, foros, o insignias
+              - generic [ref=f20e260]:
+                - generic [ref=f20e261]:
+                  - generic [ref=f20e262]: Caracteres de línea nueva en correo electrónico
+                  - generic [ref=f20e263]: mailnewline
+                - generic [ref=f20e264]:
+                  - combobox "Caracteres de línea nueva en correo electrónico" [ref=f20e266]:
+                    - option "LF" [selected]
+                    - option "CRLF"
+                  - generic [ref=f20e267]: "Valor por defecto: LF"
+                  - paragraph [ref=f20e269]: Caracteres de línea nueva usados en los mensajes de correo electrónico. CRLF es necesario de acuerdo RFC 822bis; algunos servidores realizan una conversión automática desde LF a CRLF, en tanto que otros realizan una conversión incorrecta de CRLF a CRCRLF y, finalmente, otros rechazarn los correos con LF vacío (qmail, por ejemplo). Intente modificar este ajuste si tiene problemas con correos sin entregar o con nuevas líneas dobles.
+              - generic [ref=f20e270]:
+                - generic [ref=f20e271]:
+                  - generic [ref=f20e272]: Información de origen en el asunto
+                  - generic [ref=f20e273]: emailfromvia
+                - generic [ref=f20e274]:
+                  - combobox "Información de origen en el asunto" [ref=f20e276]:
+                    - option "Nunca"
+                    - option "Siempre" [selected]
+                    - option "Únicamente cuando se utilice la dirección de no-responder"
+                  - generic [ref=f20e277]: "Valor por defecto: Siempre"
+                  - paragraph [ref=f20e279]: Agregar información de origen (nombre corto del sitio) en la sección "De" del correo saliente. Se informa al receptor de donde proviene el correo y además ayuda a evitar que los receptores accidentalmente respondan a una dirección de correo de "no responder" (no-reply en inglés).
+              - generic [ref=f20e280]:
+                - generic [ref=f20e281]:
+                  - generic [ref=f20e282]: Prefijo del asunto del correo electrónico
+                  - generic [ref=f20e283]: emailsubjectprefix
+                - generic [ref=f20e284]:
+                  - textbox "Prefijo del asunto del correo electrónico" [ref=f20e286]
+                  - generic [ref=f20e287]: "Valor por defecto: Vacío"
+                  - paragraph [ref=f20e289]: Texto a ser prefijado a la línea de asunto de todo el correo saliente.
+              - generic [ref=f20e290]:
+                - generic [ref=f20e291]:
+                  - generic [ref=f20e292]: Encabezados de correo electrónico
+                  - generic [ref=f20e293]: emailheaders
+                - generic [ref=f20e294]:
+                  - textbox "Encabezados de correo electrónico" [ref=f20e296]
+                  - generic [ref=f20e297]: "Valor por defecto: Vacío"
+                  - paragraph [ref=f20e299]: Los encabezados de correo electrónico sin procesar se agregarán literalmente a todos los correos electrónicos salientes.
+            - button "Guardar cambios" [ref=f20e302] [cursor=pointer]

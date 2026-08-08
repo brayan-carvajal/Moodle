@@ -80,6 +80,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     max-width: 100%;
 }
 
+.activity-altcontent .container-fluid,
+.activity-altcontent .container-sm,
+.activity-altcontent .container-md,
+.activity-altcontent .container-lg,
+.activity-altcontent .container-xl,
+.activity-altcontent .container-xxl {
+    max-width: 100% !important;
+    padding-right: 0;
+    padding-left: 0;
+}
+
 a {
     transition: all 0.25s ease-out;
     color: $brand-primary;
@@ -339,4 +350,13 @@ a {
     .container-xxl {
         max-width: 95%;
     }
+}
+
+.path-admin .setting .form-select {
+    max-width: 100%;
+}
+
+.path-admin .defaultsnext {
+    max-width: 100%;
+    overflow: hidden;
 }

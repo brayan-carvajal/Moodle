@@ -1,0 +1,143 @@
+- generic [active] [ref=e1]:
+  - status
+  - generic [ref=e2]:
+    - link "Salta al contenido principal" [ref=e3] [cursor=pointer]:
+      - /url: "#maincontent"
+    - navigation "Navegación del sitio" [ref=e4]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: http://localhost/
+        - img "Uninavarra Virtual etR" [ref=e6]
+      - navigation [ref=e8]:
+        - menubar [ref=e9]:
+          - menuitem "Página Principal" [ref=e10] [cursor=pointer]
+          - menuitem "Estudiantes " [ref=e11] [cursor=pointer]
+          - menuitem "Biblioteca" [ref=e12] [cursor=pointer]
+          - text: 
+      - list [ref=e13]
+      - link "Acceder" [ref=e18] [cursor=pointer]:
+        - /url: http://localhost/login/index.php
+    - region "Contenido" [ref=e23]:
+      - main [ref=e24]:
+        - list [ref=e28]:
+          - listitem [ref=e29]:
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - iframe [ref=e41]:
+                  - main [ref=f1e4]:
+                    - generic: Empieza gratis
+                    - generic: Mostrar detalles
+                    - generic: Comenzar ahora
+              - listitem [ref=e42]:
+                - generic [ref=e49]:
+                  - generic [ref=e52]:
+                    - img "Bienestar Universitario" [ref=e53]
+                    - generic [ref=e54]:
+                      - heading "Bienestar Universitario" [level=5] [ref=e55]
+                      - paragraph [ref=e56]: Tu salud y felicidad son nuestra prioridad. Estamos aquí para acompañarte en cada etapa de tu vida universitaria.
+                      - link "Ir al sitio" [ref=e57] [cursor=pointer]:
+                        - /url: https://uninavarra.edu.co/bienestar-universitario/
+                  - generic [ref=e60]:
+                    - img "Biblioteca" [ref=e61]
+                    - generic [ref=e62]:
+                      - heading "Biblioteca" [level=5] [ref=e63]
+                      - paragraph [ref=e64]: Accede a un universo de conocimiento. Nuestra biblioteca es el espacio ideal para investigar y crecer académicamente.
+                      - link "Ir al sitio" [ref=e65] [cursor=pointer]:
+                        - /url: https://uninavarra.edu.co/estudiantes/biblioteca/
+                  - generic [ref=e68]:
+                    - img "Extensión" [ref=e69]
+                    - generic [ref=e70]:
+                      - heading "Extensión" [level=5] [ref=e71]
+                      - paragraph [ref=e72]: Llevamos el conocimiento más allá del aula, fortaleciendo vínculos entre la universidad y la sociedad que nos rodea.
+                      - link "Ir al sitio" [ref=e73] [cursor=pointer]:
+                        - /url: https://uninavarra.edu.co/educacion-continua/
+                  - generic [ref=e76]:
+                    - img "Linda Campus" [ref=e77]
+                    - generic [ref=e78]:
+                      - heading "Linda Campus" [level=5] [ref=e79]
+                      - paragraph [ref=e80]: Gestiona tu vida académica fácil y rápido. Linda Campus es tu plataforma para trámites, notas y servicios universitarios.
+                      - link "Ir al sitio" [ref=e81] [cursor=pointer]:
+                        - /url: https://campus.uninavarra.edu.co/psp/cs92prod/?cmd=login&languageCd=ESP&
+                  - generic [ref=e84]:
+                    - img "Internacionalización" [ref=e85]
+                    - generic [ref=e86]:
+                      - heading "Internacionalización" [level=5] [ref=e87]
+                      - paragraph [ref=e88]: Abre tu mente al mundo. Te conectamos con oportunidades internacionales que transformarán tu futuro profesional.
+                      - link "Ir al sitio" [ref=e89] [cursor=pointer]:
+                        - /url: https://uninavarra.edu.co/internacionalizacion/
+                  - generic [ref=e92]:
+                    - img "Admisiones" [ref=e93]
+                    - generic [ref=e94]:
+                      - heading "Admisiones" [level=5] [ref=e95]
+                      - paragraph [ref=e96]: Da el primer paso hacia tu futuro. Te guiamos en cada etapa del proceso para unirte a nuestra comunidad universitaria.
+                      - button "Ir al sitio " [ref=e98] [cursor=pointer]
+              - listitem [ref=e99]:
+                - iframe [ref=e107]:
+                  - main [ref=f2e4]:
+                    - generic: Empieza gratis
+                    - generic: Mostrar detalles
+                    - generic: Comenzar ahora
+              - listitem [ref=e108]:
+                - generic [ref=e115]:
+                  - generic [ref=e118]:
+                    - heading "Curso Virtual sobre Obesidad Infantil" [level=6] [ref=e119]
+                    - paragraph [ref=e120]: Este curso ofrece herramientas básicas de comprensión y prevención. Autogestionable, permite avance a ritmo propio y certificación al cumplir requisitos mínimos.
+                    - link "Inscribirse" [ref=e122] [cursor=pointer]:
+                      - /url: https://uninavarra.edu-labs.co/course/view.php?id=753
+                  - generic [ref=e125]:
+                    - heading "Curso Virtual Diabetes Mellitus Tipo II" [level=6] [ref=e126]
+                    - paragraph [ref=e127]: Este curso ofrece herramientas necesarias para la enfermedad de la Diabetes. Autogestionable, permite avance a ritmo propio y certificación al cumplir requisitos mínimos.
+                    - link "Inscribirse" [ref=e129] [cursor=pointer]:
+                      - /url: https://uninavarra.edu-labs.co/enrol/index.php?id=807
+                  - generic [ref=e132]:
+                    - heading "Curso Virtual EPOC" [level=6] [ref=e133]
+                    - paragraph [ref=e134]: Curso virtual, masivo y abierto que brinda herramientas conceptuales y prácticas para comprender, diagnosticar y acompañar a pacientes con EPOC.
+                    - link "Inscribirse" [ref=e136] [cursor=pointer]:
+                      - /url: https://uninavarra.edu-labs.co/enrol/index.php?id=852
+                  - generic [ref=e139]:
+                    - heading "Curso Virtual Generalidades Medicina Familiar" [level=6] [ref=e140]
+                    - paragraph [ref=e141]: Curso virtual tipo MOOC sobre los principios y valores de la Medicina Familiar. Ofrece herramientas biopsicosociales para fortalecer la Atención Primaria en Salud con un enfoque humano e integral.
+                    - link "Inscribirse" [ref=e143] [cursor=pointer]:
+                      - /url: https://uninavarra.edu-labs.co/enrol/index.php?id=841
+              - listitem [ref=e144]:
+                - generic [ref=e152]:
+                  - paragraph [ref=e153]:
+                    - strong [ref=e155]: Una plataforma para todos
+                    - text: Accede en cualquier momento y cualquier lugar.
+                    - generic [ref=e156]: La globalización y la democratización de la educación son, hoy por hoy, fenómenos que forman parte de una realidad innegable que ha venido manifestándose progresivamente en el curso de los años, principalmente, gracias al uso intensivo de las tecnologías de la información.
+                  - paragraph [ref=e158]:
+                    - iframe [ref=e160]:
+                      - generic [ref=f3e1]:
+                        - generic "Reproductor de video de YouTube" [ref=f3e3]
+                        - generic [ref=f3e5]:
+                          - generic:
+                            - generic:
+                              - generic [ref=f3e6] [cursor=pointer]
+                              - button "Reproducir video" [ref=f3e10] [cursor=pointer]
+                              - button "Ocultar controles del reproductor" [ref=f3e12] [cursor=pointer]
+                              - generic [ref=f3e14]:
+                                - generic [ref=f3e19]:
+                                  - generic [ref=f3e20]:
+                                    - link "Video CEV" [ref=f3e21] [cursor=pointer]:
+                                      - /url: https://www.youtube.com/watch?v=5VR-mM1F2Fk
+                                    - link "Gestor etR" [ref=f3e22] [cursor=pointer]:
+                                      - /url: /channel/UCj4jHcmKUjZqrwJc9_QwggA
+                                  - generic [ref=f3e24]:
+                                    - button [ref=f3e25] [cursor=pointer]
+                                    - generic [ref=f3e27]:
+                                      - generic: Gestor etR
+                                      - generic: 6 suscriptores
+                                - generic [ref=f3e28]:
+                                  - button "Compartir" [ref=f3e31] [cursor=pointer]
+                                  - link "Mirar en YouTube" [ref=f3e42] [cursor=pointer]:
+                                    - /url: https://www.youtube.com/watch?v=5VR-mM1F2Fk
+                                    - generic [ref=f3e43]: Mirar en
+        - link "Salta anuncios de la página" [ref=e161] [cursor=pointer]:
+          - /url: "#skipsitenews"
+        - generic [ref=e162]:
+          - heading "Anuncios de la página" [level=2] [ref=e163]
+          - generic [ref=e164]: Aún no hay temas de debate en este foro
+        - generic [ref=e171]:
+          - textbox "Buscar cursos" [ref=e172]
+          - generic: Buscar cursos
+          - button "Buscar cursos" [ref=e174] [cursor=pointer]:
+            - generic [ref=e175]: 

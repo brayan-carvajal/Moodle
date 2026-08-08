@@ -53191,6 +53191,17 @@ body {
   max-width: 100%;
 }
 
+.activity-altcontent .container-fluid,
+.activity-altcontent .container-sm,
+.activity-altcontent .container-md,
+.activity-altcontent .container-lg,
+.activity-altcontent .container-xl,
+.activity-altcontent .container-xxl {
+  max-width: 100% !important;
+  padding-right: 0;
+  padding-left: 0;
+}
+
 a {
   transition: all 0.25s ease-out;
   color: #0f47ad;
@@ -55771,11 +55782,20 @@ body.pagelayout-login #page,
   background-position: center !important;
   background-attachment: fixed !important;
   background-color: #ee5522 !important;
-  background: none !important;
-  /* Limpiar primero */
-   background-image: url('/theme/moove/pix/login-bg.jpg') !important;
-   /* Ocultar sección feature (marketing boxes) */
-   #feature {
-       display: none !important;
-   }
+    background: none !important;
+    /* Limpiar primero */
+     background-image: url('/theme/moove/pix/login-bg.jpg') !important;
+    /* Ocultar sección feature (marketing boxes) */
+    #feature {
+        display: none !important;
+    }
+}
+
+.path-admin .setting .form-select {
+  max-width: 100%;
+}
+
+.path-admin .defaultsnext {
+  max-width: 100%;
+  overflow: hidden;
 }

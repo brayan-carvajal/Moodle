@@ -23,7 +23,6 @@ $CFG->dataroot  = 'C:\\Users\\BrayanEstivenCarvaja\\Downloads\\Moodle\\server\\m
 $CFG->admin     = 'admin';
 
 $CFG->lang = 'es';
-$CFG->langforce = 'es';
 
 $CFG->passwordpolicy = true;
 $CFG->minpasswordlength = 7;
@@ -34,6 +33,13 @@ $CFG->minpasswordnonalphanum = 0;
 $CFG->maxconsecutiveidentchars = 100;
 
 $CFG->directorypermissions = 0777;
+
+$CFG->smtphosts = 'smtp.gmail.com:587';
+$CFG->smtpport = 587;
+$CFG->smtpuser = 'brayancarvajalpadilla02@gmail.com';
+$CFG->smtppass = 'kzcyaourmurlpoxm';
+$CFG->smtpsecure = 'tls';
+$CFG->smtpauth = true;
 
 require_once(__DIR__ . '/lib/setup.php');
 

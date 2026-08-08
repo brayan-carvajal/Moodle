@@ -1,0 +1,37 @@
+- generic [active] [ref=f12e1]:
+  - status
+  - generic [ref=f12e2]:
+    - link "Salta al contenido principal" [ref=f12e3] [cursor=pointer]:
+      - /url: "#maincontent"
+    - region "Contenido" [ref=f12e7]:
+      - main [ref=f12e10]:
+        - generic [ref=f12e12]:
+          - generic [ref=f12e13]:
+            - generic [ref=f12e14]:
+              - img "Bienvenidos" [ref=f12e15]
+              - heading "Entrar a Bienvenidos" [level=1] [ref=f12e16]
+            - link "Saltar a creación de una nueva cuenta" [ref=f12e17] [cursor=pointer]:
+              - /url: https://uninavarra.edu-labs.co/login/signup.php
+            - generic [ref=f12e18]:
+              - generic [ref=f12e19]:
+                - generic [ref=f12e20]: Nombre de usuario o correo electrónico
+                - textbox "Nombre de usuario o correo electrónico" [ref=f12e21]
+              - generic [ref=f12e22]:
+                - generic [ref=f12e23]: Contraseña
+                - textbox "Contraseña" [ref=f12e24]
+              - button "Acceder" [ref=f12e26] [cursor=pointer]
+              - link "¿Olvidó su contraseña?" [ref=f12e28] [cursor=pointer]:
+                - /url: https://uninavarra.edu-labs.co/login/forgot_password.php
+              - generic [ref=f12e29]:
+                - text: ¿No tiene cuenta?
+                - link "Crear nueva cuenta" [ref=f12e30] [cursor=pointer]:
+                  - /url: https://uninavarra.edu-labs.co/login/signup.php
+          - generic [ref=f12e32]:
+            - generic [ref=f12e33]:
+              - paragraph [ref=f12e34]: Ingresar con
+              - link "Google" [ref=f12e35] [cursor=pointer]:
+                - /url: https://uninavarra.edu-labs.co/auth/oauth2/login.php?id=2&wantsurl=https%3A%2F%2Funinavarra.edu-labs.co%2Flocal%2Fmail%2Fview.php%3Ft%3Dinbox&sesskey=bO4oaXRjhj
+            - button " Aviso de Cookies" [ref=f12e38] [cursor=pointer]:
+              - generic [ref=f12e39]: 
+              - text: Aviso de Cookies
+        - text:       

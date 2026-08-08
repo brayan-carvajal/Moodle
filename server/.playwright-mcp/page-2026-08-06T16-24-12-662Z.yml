@@ -1,0 +1,32 @@
+- generic [ref=f5e1]:
+  - status
+  - generic [ref=f5e2]:
+    - link "Salta al contenido principal" [ref=f5e3] [cursor=pointer]:
+      - /url: "#maincontent"
+    - main [ref=f5e10]:
+      - generic [ref=f5e13]:
+        - generic [ref=f5e14]:
+          - img "Bienvenidos" [ref=f5e15]
+          - heading "Entrar a Bienvenidos" [level=1] [ref=f5e16]
+        - link "Saltar a creación de una nueva cuenta" [ref=f5e17] [cursor=pointer]:
+          - /url: http://localhost/login/signup.php
+        - generic [ref=f5e18]:
+          - generic [ref=f5e19]:
+            - generic [ref=f5e20]: Nombre de usuario o correo electrónico
+            - textbox "Nombre de usuario o correo electrónico" [active] [ref=f5e21]
+          - generic [ref=f5e22]:
+            - generic [ref=f5e23]: Contraseña
+            - textbox "Contraseña" [ref=f5e24]
+          - button "Acceder" [ref=f5e27] [cursor=pointer]
+        - link "¿Olvidó su contraseña?" [ref=f5e29] [cursor=pointer]:
+          - /url: http://localhost/login/forgot_password.php
+        - generic [ref=f5e30]:
+          - text: ¿No tiene cuenta?
+          - link "Crear nueva cuenta" [ref=f5e31] [cursor=pointer]:
+            - /url: http://localhost/login/signup.php
+        - button " Aviso de Cookies" [ref=f5e33] [cursor=pointer]:
+          - generic [ref=f5e34]: 
+          - text: Aviso de Cookies
+    - contentinfo:
+      - button "Mostrar pie de página" [ref=f5e35] [cursor=pointer]:
+        - generic [ref=f5e36]: "?"

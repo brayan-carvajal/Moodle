@@ -1,0 +1,19 @@
+- generic [active] [ref=f10e1]:
+  - status
+  - generic [ref=f10e2]:
+    - link "Saltar al contenido principal" [ref=f10e3] [cursor=pointer]:
+      - /url: "#maincontent"
+    - main [ref=f10e10]:
+      - generic [ref=f10e12]:
+        - alertdialog "Confirmar":
+          - generic [ref=f10e13]:
+            - heading "Confirmar" [level=4] [ref=f10e15]
+            - alert [ref=f10e16]:
+              - paragraph [ref=f10e17]: Actualmente ha iniciado sesión como Brayan Estiven Carvajal Padilla, necesita salir antes de volver a entrar con un usuario diferente.
+            - generic [ref=f10e19]:
+              - button "Cancelar" [ref=f10e22] [cursor=pointer]
+              - button "Cerrar sesión" [ref=f10e25] [cursor=pointer]
+    - contentinfo:
+      - button "Mostrar pie de página" [ref=f10e26] [cursor=pointer]:
+        - generic [ref=f10e27]: "?"
+      - text:   
