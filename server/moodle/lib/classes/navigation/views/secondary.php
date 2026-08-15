@@ -226,6 +226,13 @@ class secondary extends view {
                     $this->load_single_activity_course_navigation();
                 } else {
                     $this->load_module_navigation($this->page->settingsnav);
+                    $coursenode = navigation_node::create(get_string('course'), new \moodle_url('/course/view.php', ['id' => $this->page->course->id]), self::TYPE_COURSE, null, 'coursehome');
+                    $nodekeys = $this->children->get_key_list();
+                    if (!empty($nodekeys)) {
+                        $this->add_node($coursenode, reset($nodekeys));
+                    } else {
+                        $this->add_node($coursenode);
+                    }
                     $defaultmoremenunodes = $this->get_default_module_more_menu_nodes();
                 }
                 break;
@@ -1086,11 +1093,6 @@ class secondary extends view {
         // Create 'Course' navigation node.
         $coursesecondarynode = navigation_node::create(get_string('course'), null, self::TYPE_COURSE, null, 'course');
         $this->load_course_navigation($coursesecondarynode);
-        // Remove the unnecessary 'Course' child node generated in load_course_navigation().
-        $coursehomenode = $coursesecondarynode->find('coursehome', self::TYPE_COURSE);
-        if (!empty($coursehomenode)) {
-            $coursehomenode->remove();
-        }
 
         // Add the 'Course' node to the secondary navigation only if this node has children nodes.
         if (count($coursesecondarynode->children) > 0) {
