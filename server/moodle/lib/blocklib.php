@@ -890,7 +890,21 @@ class block_manager {
             $defaulregion = $blockregion;
         }
 
-        $lastcurrentblock = end($this->birecordsbyregion[$defaulregion]);
+        if (!$this->is_known_region($defaulregion)) {
+            $defaulregion = 'side-pre';
+            if (!$this->is_known_region($defaulregion)) {
+                $defaulregion = 'side-post';
+            }
+            if (!$this->is_known_region($defaulregion)) {
+                $defaulregion = key($this->regions);
+            }
+        }
+
+        $regionblocks = $this->birecordsbyregion[$defaulregion] ?? [];
+        if (!is_array($regionblocks)) {
+            $regionblocks = [];
+        }
+        $lastcurrentblock = end($regionblocks);
         if ($lastcurrentblock) {
             $weight = $lastcurrentblock->weight + 1;
         } else {

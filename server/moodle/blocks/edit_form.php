@@ -159,8 +159,10 @@ class block_edit_form extends \core_form\dynamic_form {
         }
         $first = reset($weightoptions);
         $weightoptions[$first] = get_string('bracketfirst', 'block', $first);
-        $last = end($weightoptions);
-        $weightoptions[$last] = get_string('bracketlast', 'block', $last);
+        if (!empty($weightoptions)) {
+            $last = end($weightoptions);
+            $weightoptions[$last] = get_string('bracketlast', 'block', $last);
+        }
 
         $regionoptions = $this->page->theme->get_all_block_regions();
         foreach ($this->page->blocks->get_regions() as $region) {
@@ -168,6 +170,10 @@ class block_edit_form extends \core_form\dynamic_form {
             if (!isset($regionoptions[$region])) {
                 $regionoptions[$region] = $region;
             }
+        }
+
+        if (isset($regionoptions['content'])) {
+            $regionoptions['content'] = 'Principal';
         }
 
         $parentcontext = context::instance_by_id($this->block->instance->parentcontextid);

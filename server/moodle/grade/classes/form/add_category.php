@@ -161,6 +161,19 @@ class add_category extends dynamic_form {
 
         $this->aggregation_options = grade_helper::get_aggregation_strings();
 
+        $customlabels = [
+            GRADE_AGGREGATE_MEAN             => 'Media de calificaciones',
+            GRADE_AGGREGATE_WEIGHTED_MEAN    => 'Media ponderada de calificaciones',
+            GRADE_AGGREGATE_WEIGHTED_MEAN2   => 'Media ponderada simple de calificaciones',
+            GRADE_AGGREGATE_SUM              => 'Suma',
+        ];
+
+        foreach ($customlabels as $constant => $label) {
+            if (array_key_exists($constant, $this->aggregation_options)) {
+                $this->aggregation_options[$constant] = $label;
+            }
+        }
+
         $local = $this->get_gradecategory();
         $category = $local['categoryitem'];
 
@@ -426,6 +439,12 @@ class add_category extends dynamic_form {
                 $allaggoptions = array_keys($this->aggregation_options);
                 $aggel =& $mform->getElement('aggregation');
                 $visible = explode(',', $CFG->grade_aggregations_visible);
+                $visible = array_merge($visible, [
+                    GRADE_AGGREGATE_MEAN,
+                    GRADE_AGGREGATE_WEIGHTED_MEAN,
+                    GRADE_AGGREGATE_WEIGHTED_MEAN2,
+                    GRADE_AGGREGATE_SUM,
+                ]);
                 if (!is_null($gradecategory->aggregation)) {
                     // Current type is always visible.
                     $visible[] = $gradecategory->aggregation;
@@ -444,6 +463,12 @@ class add_category extends dynamic_form {
                 $allaggoptions = array_keys($this->aggregation_options);
                 $aggel =& $mform->getElement('aggregation');
                 $visible = explode(',', $CFG->grade_aggregations_visible);
+                $visible = array_merge($visible, [
+                    GRADE_AGGREGATE_MEAN,
+                    GRADE_AGGREGATE_WEIGHTED_MEAN,
+                    GRADE_AGGREGATE_WEIGHTED_MEAN2,
+                    GRADE_AGGREGATE_SUM,
+                ]);
                 foreach ($allaggoptions as $type) {
                     if (!in_array($type, $visible)) {
                         $aggel->removeOption($type);

@@ -232,6 +232,9 @@ class boostnavbar implements \renderable {
      * Removes the action from the last item of the boostnavbaritem.
      */
     protected function remove_last_item_action(): void {
+        if (empty($this->items)) {
+            return;
+        }
         $item = end($this->items);
         $item->action = null;
         reset($this->items);

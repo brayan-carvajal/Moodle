@@ -70,16 +70,24 @@ function theme_moove_get_main_scss_content($theme) {
 function theme_moove_get_extra_scss($theme) {
     $content = '';
 
+    // Grade edit tree: remove grid borders and soften spacing.
+    $content .= '.path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable tr.category td,
+                 .path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable tr.item td,
+                 .path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable thead th,
+                 .path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable th,
+                 .path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable td { border: none !important; }
+                 .path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable tbody+tbody { border: none !important; }
+                 .path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable tr.spacer { height: 0.35rem !important; }
+                 .path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable td { padding-top: 0.35rem !important; padding-bottom: 0.35rem !important; } ';
+
     // Sets the login background image.
     $loginbgimgurl = $theme->setting_file_url('loginbgimg', 'loginbgimg');
 
-    if (empty($loginbgimgurl)) {
-        return '';
+    if (!empty($loginbgimgurl)) {
+        $content .= 'body.pagelayout-login #page { ';
+        $content .= "background-color: initial; background-image: url('$loginbgimgurl'); background-size: cover;";
+        $content .= ' }';
     }
-
-    $content .= 'body.pagelayout-login #page { ';
-    $content .= "background-color: initial; background-image: url('$loginbgimgurl'); background-size: cover;";
-    $content .= ' }';
 
     // Always return the background image with the scss when we have it.
     return !empty($theme->settings->scss) ? $theme->settings->scss . ' ' . $content : $content;

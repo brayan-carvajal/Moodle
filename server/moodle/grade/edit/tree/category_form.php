@@ -39,6 +39,19 @@ class edit_category_form extends moodleform {
 
         $this->aggregation_options = grade_helper::get_aggregation_strings();
 
+        $customlabels = [
+            GRADE_AGGREGATE_MEAN             => 'Media de calificaciones',
+            GRADE_AGGREGATE_WEIGHTED_MEAN    => 'Media ponderada de calificaciones',
+            GRADE_AGGREGATE_WEIGHTED_MEAN2   => 'Media ponderada simple de calificaciones',
+            GRADE_AGGREGATE_SUM              => 'Suma',
+        ];
+
+        foreach ($customlabels as $constant => $label) {
+            if (array_key_exists($constant, $this->aggregation_options)) {
+                $this->aggregation_options[$constant] = $label;
+            }
+        }
+
         // visible elements
         $mform->addElement('header', 'headercategory', get_string('gradecategory', 'grades'));
         $mform->addElement('text', 'fullname', get_string('categoryname', 'grades'));
@@ -370,6 +383,12 @@ class edit_category_form extends moodleform {
                 $allaggoptions = array_keys($this->aggregation_options);
                 $agg_el =& $mform->getElement('aggregation');
                 $visible = explode(',', $CFG->grade_aggregations_visible);
+                $visible = array_merge($visible, [
+                    GRADE_AGGREGATE_MEAN,
+                    GRADE_AGGREGATE_WEIGHTED_MEAN,
+                    GRADE_AGGREGATE_WEIGHTED_MEAN2,
+                    GRADE_AGGREGATE_SUM,
+                ]);
                 if (!is_null($grade_category->aggregation)) {
                     // current type is always visible
                     $visible[] = $grade_category->aggregation;
@@ -391,6 +410,12 @@ class edit_category_form extends moodleform {
                 $allaggoptions = array_keys($this->aggregation_options);
                 $agg_el =& $mform->getElement('aggregation');
                 $visible = explode(',', $CFG->grade_aggregations_visible);
+                $visible = array_merge($visible, [
+                    GRADE_AGGREGATE_MEAN,
+                    GRADE_AGGREGATE_WEIGHTED_MEAN,
+                    GRADE_AGGREGATE_WEIGHTED_MEAN2,
+                    GRADE_AGGREGATE_SUM,
+                ]);
                 foreach ($allaggoptions as $type) {
                     if (!in_array($type, $visible)) {
                         $agg_el->removeOption($type);

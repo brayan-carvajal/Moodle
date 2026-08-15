@@ -62,3 +62,51 @@ require(['theme_boost/loader'], function() {
   M.util.js_complete('theme_boost/loader');
 });
 {{/js}}
+{{#js}}
+(function() {
+  if (!window.location.pathname.includes('/login/forgot_password.php')) {
+    return;
+  }
+  var container = document.querySelector('.login-container');
+  if (container) {
+    container.style.maxWidth = '520px';
+    container.style.margin = '0 auto';
+    container.style.width = '100%';
+    container.style.padding = '1.5rem';
+    var title = document.createElement('h2');
+    title.className = 'login-heading text-center fw-bold mb-4';
+    title.style.fontSize = '1.75rem';
+    title.textContent = 'Recuperar contraseña';
+    container.insertBefore(title, container.firstChild);
+    var headings = container.querySelectorAll('h3');
+    headings.forEach(function(h) {
+      h.style.fontSize = '1.15rem';
+      h.style.fontWeight = '600';
+      h.style.marginBottom = '0.25rem';
+      h.style.marginTop = '0.25rem';
+    });
+    var boxes = container.querySelectorAll('.generalbox');
+    boxes.forEach(function(box) {
+      box.style.marginBottom = '1.25rem';
+      box.style.fontSize = '0.95rem';
+    });
+    var lastFieldset = container.querySelector('fieldset:last-of-type');
+    if (lastFieldset) {
+      lastFieldset.style.marginBottom = '0';
+    }
+  }
+  var wrap = document.createElement('div');
+  wrap.className = 'text-center mt-3';
+  var btn = document.createElement('input');
+  btn.type = 'button';
+  btn.className = 'btn btn-primary';
+  btn.value = 'Volver';
+  btn.onclick = function() {
+    window.location.href = '{{config.wwwroot}}/login/index.php';
+  };
+  wrap.appendChild(btn);
+  if (container) {
+    container.appendChild(wrap);
+  }
+})();
+{{/js}}

@@ -41420,16 +41420,15 @@ p.arrow_button {
 
 .path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable tr.category td {
   background-color: #fff;
-  border-top: 1px solid #dee2e6;
-  border-bottom: 1px solid #dee2e6;
+  border: none;
 }
 
 .path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable tr.category td:first-child {
-  border-left: 1px solid #dee2e6;
+  border: none;
 }
 
 .path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable tr.category td:last-child {
-  border-right: 1px solid #dee2e6;
+  border: none;
 }
 
 .path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable tr.category td.column-name {
@@ -41465,7 +41464,21 @@ p.arrow_button {
 
 .path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable tr.item td {
   background-color: #fff;
-  border-top: 3px solid #f8f9fa;
+  border: none;
+}
+
+.path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable thead th,
+.path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable thead td {
+  border: none;
+}
+
+.path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable th,
+.path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable td {
+  border: none;
+}
+
+.path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable tbody+tbody {
+  border: none;
 }
 
 .path-grade-edit-tree .gradetree-wrapper .setup-grades.generaltable tr.item.categoryitem td,

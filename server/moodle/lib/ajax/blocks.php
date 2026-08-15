@@ -67,8 +67,10 @@ switch ($action) {
                 $buinewweight = 0;
             } else {
                 // Moving to very bottom.
-                $last = end($instances);
-                $buinewweight = $last->instance->weight + 1;
+                if (!empty($instances)) {
+                    $last = end($instances);
+                    $buinewweight = $last->instance->weight + 1;
+                }
             }
         } else {
             // Moving somewhere.

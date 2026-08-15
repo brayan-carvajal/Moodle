@@ -47,6 +47,11 @@ $THEME->layouts = [
         'defaultregion' => 'side-pre',
         'options' => ['nonavbar' => true],
     ],
+    'course' => [
+        'file' => 'course.php',
+        'regions' => ['side-pre', 'content'],
+        'defaultregion' => 'content',
+    ],
 ];
 
 $THEME->parents = ['boost'];
